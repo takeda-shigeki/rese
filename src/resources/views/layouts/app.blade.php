@@ -20,15 +20,15 @@
         </a>
         <nav>
           <ul class="header-nav">
-            @if (Auth::check())
             <li class="header-nav__item">
               <a class="header-nav__link" href="/">ホーム</a>
-            </li>            
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="/attendance">日付別勤怠実績</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="/users">ユーザー別勤怠実績</a>
+              <a class="header-nav__link" href="/login">ログイン</a>
+            </li>
+            @if (Auth::check())
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="/mypage">マイページ</a>
             </li>
             <li class="header-nav__item">
               <form class="form" action="/logout" method="post">
@@ -47,7 +47,6 @@
     @yield('content')
   </main>
 
-  <footer>Atte, inc.</footer>
 </body>
 
 </html>
