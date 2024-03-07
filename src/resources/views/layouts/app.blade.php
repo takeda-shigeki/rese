@@ -26,6 +26,9 @@
             <li class="header-nav__item">
               <a class="header-nav__link" href="/login">ログイン</a>
             </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="/login">ユーザー登録</a>
+            </li>            
             @if (Auth::check())
             <li class="header-nav__item">
               <a class="header-nav__link" href="/mypage">マイページ</a>

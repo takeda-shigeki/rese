@@ -5,36 +5,57 @@
 @endsection
 
 @section('content')
-<div class="greeting">
-  <p class="greeting__words">
-    <?php $user = Auth::user(); ?>{{ $user->name }}さんお疲れ様です！
-  </p>
+<form class="search-form" action="/search" method="get">
+  @csrf
+  <div class="search-form__item">
+    <select class="search-form__item-select" name="restaurant_area">
+      <option value="">全てのエリア</option>
+      <option value="東京都">東京都</option>
+      <option value="大阪府">大阪府</option>
+      <option value="福岡県">福岡県</option>
+    </select>
+  </div>
+  <div class="search-form__item">
+    <select class="search-form__item-select" name="genre">
+      <option value="">全てのジャンル</option>
+      <option value="寿司">寿司</option>
+      <option value="焼肉">焼肉</option>
+      <option value="居酒屋">居酒屋</option>
+      <option value="イタリアン">イタリアン</option>
+      <option value="ラーメン">ラーメン</option>
+    </select>
+  </div>
+  <div class="search-form__button">
+      <button class="search-form__button-submit" type="submit">Search</button>
+  </div>
+</form>
+
+<form action="/search" method="POST">
+@csrf
+  店名で検索
+  <input type="text" name="keyword" value="{{$input}}">
+  <input type="submit">
+</form>
+
+<div class="restaurant">
+  <h>{{ $explanation ?? '' }}</h>
+  <div class="restaurant__row">
+    @foreach ($restaurants as $restaurant)
+    <div class="restaurant__each">
+      <img src="/images/{{ $restaurant->id }}.jpg" width=20%>
+      {{ $restaurant['name'] }}
+      ＃{{ $restaurant['prefecture'] }}　＃{{ $restaurant['genre'] }}
+      <form action="/shop_detail" method="get">
+        @csrf
+        <button class="restaurant__detail-submit" type="submit">詳しく見る</button>
+      </form>
+      <form action="/checkin" method="post">
+        @csrf
+        <button class="restaurant__favorite-submit" type="submit">❤</button>
+      </form>
+    </div>
+    @endforeach
+  </div>
 </div>
 
-<div class="attendance__content">
-  <div class="attendance__panel">
-    <form class="attendance__button" action="/checkin" method="post">
-      @csrf
-      <button class="attendance__button-submit" type="submit">勤務開始</button>
-    </form>
-    <div class="attendance__button">
-      <button class="attendance__button-submit--off">勤務終了</button>
-    </div>
-  </div>
-  <div class="break__panel">
-    <div class="break__button">
-      <button class="break__button-submit--off">休憩開始</button>
-    </div>
-    <div class="break__button">
-      <button class="break__button-submit--off">休憩終了</button>
-    </div>
-  </div>
-</div>
-
-@if (session('alert'))
-<div class="alert">{{ session('alert') }}</div>
-@endif
-@if ('message')
-<div class="message">{{ $message ?? '' }}</div>
-@endif
 @endsection

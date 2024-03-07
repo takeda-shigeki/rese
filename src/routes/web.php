@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RestaurantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,19 @@ use App\Http\Controllers\AuthController;
 |
 */
 Route::middleware('auth')->group(function () {
-    Route::get('/', [AuthController::class, 'index']);
+    Route::get('/mypage', [AuthController::class, 'my_page']);
 });
 
+Route::get('/thanks', function() {
+    return View::make('auth.thanks');
+});
+
+Route::get('/', [RestaurantController::class, 'index']);
+Route::get('/search', [RestaurantController::class, 'search']);
+Route::post('/search', [RestaurantController::class, 'keyword_search']);
+
+Route::get('/shop_detail', function() {
+    return View::make('shop_detail');
+});
 
 

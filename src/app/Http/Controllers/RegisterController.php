@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use App\Http\Responses\RegisterResponse;
 use Laravel\Fortify\Contracts\RegisterViewResponse;
-use App\VendorOverrides\Fortify;
+use Laravel\Fortify\Fortify;
 
 class RegisterController extends Controller
 {

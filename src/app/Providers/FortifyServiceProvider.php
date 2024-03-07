@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Laravel\Fortify\Fortify;
 use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
@@ -13,7 +14,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\RegisterResponse as RegisterResponseContract; //追記
 use App\Http\Responses\RegisterResponse; //追記
-use App\VendorOverrides\Fortify; //書換
 use App\Http\Controllers\RegisterController; //追記
 use Laravel\Fortify\Http\Controllers\RegisteredUserController; //追記
 
@@ -38,9 +38,6 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::registerView(function () {
             return view('auth.register');
-        });
-        Fortify::thanksView(function () {
-            return view('auth.thanks');
         });
         Fortify::loginView(function () {
             return view('auth.login');
