@@ -44,4 +44,14 @@ class RestaurantController extends Controller
         $input =  $request->keyword;
         return view('index', ['restaurants' => $restaurants, 'input' => $input]);
     }
+
+    public function shop_detail(Request $request){
+        $restaurant = Restaurant::where('id', $request->restaurant_id)->first();
+        return view('shop_detail', ['restaurant' => $restaurant,]);
+    }
+
+    public function booking_indication(Request $request){
+        $restaurant = Restaurant::where('id', $request->restaurant_id)->first();
+        return view('shop_detail', ['restaurant' => $restaurant,]);
+    }
 }

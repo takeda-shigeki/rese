@@ -47,6 +47,7 @@
       ＃{{ $restaurant['prefecture'] }}　＃{{ $restaurant['genre'] }}
       <form action="/shop_detail" method="get">
         @csrf
+        <input type="hidden" value="{{$restaurant->id}}" name="restaurant_id">
         <button class="restaurant__detail-submit" type="submit">詳しく見る</button>
       </form>
       <form action="/checkin" method="post">

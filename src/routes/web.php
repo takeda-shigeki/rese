@@ -26,8 +26,7 @@ Route::get('/', [RestaurantController::class, 'index']);
 Route::get('/search', [RestaurantController::class, 'search']);
 Route::post('/search', [RestaurantController::class, 'keyword_search']);
 
-Route::get('/shop_detail', function() {
-    return View::make('shop_detail');
-});
+Route::get('/shop_detail', [RestaurantController::class, 'shop_detail']);
+Route::post('/booking_indication', [RestaurantController::class, 'shop_detail']);
 
 
