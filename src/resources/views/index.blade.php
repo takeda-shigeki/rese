@@ -33,7 +33,7 @@
 <form action="/search" method="POST">
 @csrf
   店名で検索
-  <input type="text" name="keyword" value="{{$input}}">
+  <input type="text" name="keyword" value="{{$input ?? ''}}">
   <input type="submit">
 </form>
 
@@ -50,10 +50,13 @@
         <input type="hidden" value="{{$restaurant->id}}" name="restaurant_id">
         <button class="restaurant__detail-submit" type="submit">詳しく見る</button>
       </form>
-      <form action="/checkin" method="post">
+      @if (Auth::check())
+      <form action="/my_page" method="post">
         @csrf
-        <button class="restaurant__favorite-submit" type="submit">❤</button>
+        <input type="hidden" name="favorite" value="{{$restaurant->id}}">
+        <button type="submit">@if($my_favorites->contains('restaurant_id', $restaurant->id)){{ '♥' }}@else{{ '♡' }}@endif</button>
       </form>
+      @endif
     </div>
     @endforeach
   </div>

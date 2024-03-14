@@ -50,8 +50,4 @@ class RestaurantController extends Controller
         return view('shop_detail', ['restaurant' => $restaurant,]);
     }
 
-    public function booking_indication(Request $request){
-        $restaurant = Restaurant::where('id', $request->restaurant_id)->first();
-        return view('shop_detail', ['restaurant' => $restaurant,]);
-    }
 }

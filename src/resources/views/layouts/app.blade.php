@@ -20,6 +20,7 @@
         </a>
         <nav>
           <ul class="header-nav">
+            @if (!Auth::check())
             <li class="header-nav__item">
               <a class="header-nav__link" href="/">ホーム</a>
             </li>
@@ -28,10 +29,14 @@
             </li>
             <li class="header-nav__item">
               <a class="header-nav__link" href="/login">ユーザー登録</a>
-            </li>            
+            </li>
+            @endif
             @if (Auth::check())
             <li class="header-nav__item">
-              <a class="header-nav__link" href="/mypage">マイページ</a>
+              <a class="header-nav__link" href="/my_page">ホーム</a>
+            </li>
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="/my_page/status">マイページ</a>
             </li>
             <li class="header-nav__item">
               <form class="form" action="/logout" method="post">

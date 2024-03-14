@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\FavorityController;
+use App\Http\Controllers\StatusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +18,14 @@ use App\Http\Controllers\RestaurantController;
 |
 */
 Route::middleware('auth')->group(function () {
-    Route::get('/mypage', [AuthController::class, 'my_page']);
+    Route::get('/my_page', [AuthController::class, 'my_page']);
+    Route::post('/my_page/booking_indication', [BookingController::class, 'booking_indication']);
+    Route::post('/my_page', [FavorityController::class, 'favority']);
+    Route::get('/my_page/status', [StatusController::class, 'status']);
+});
+
+Route::get('/login', function() {
+    return View::make('auth.login');
 });
 
 Route::get('/thanks', function() {
@@ -25,8 +35,6 @@ Route::get('/thanks', function() {
 Route::get('/', [RestaurantController::class, 'index']);
 Route::get('/search', [RestaurantController::class, 'search']);
 Route::post('/search', [RestaurantController::class, 'keyword_search']);
-
 Route::get('/shop_detail', [RestaurantController::class, 'shop_detail']);
-Route::post('/booking_indication', [RestaurantController::class, 'shop_detail']);
 
 
