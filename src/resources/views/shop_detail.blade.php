@@ -1,29 +1,33 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/shop_detail.css') }}">
 @endsection
 
 @section('content')
-<div>
-    <div class="restaurant">
-        {{ $restaurant['name'] }}
-        <img src="/images/{{ $restaurant->id }}.jpg" width=20%>
-        ＃{{ $restaurant['prefecture'] }}　＃{{ $restaurant['genre'] }}
-        {{ $restaurant['overview'] }}
+<div class="restaurant">
+    <div class="restaurant__detail">
+        <h class="restaurant__detail-name">{{ $restaurant['name'] }}</h><br>
+        <p></p>
+        <img class="restaurant__detail-image" src="/images/{{ $restaurant->id }}.jpg">
+        <p class="restaurant__detail-explanation">＃{{ $restaurant['prefecture'] }}　＃{{ $restaurant['genre'] }}</p>
+        <p class="restaurant__detail-overview">{{ $restaurant['overview'] }}</p>
     </div>
 
-    <div>
+    <div class="restaurant__booking">
+        <p></p>
+        <h class="restaurant__booking-title">御予約</h>
+        <p></p>
         @if (!Auth::check())
-        当店に予約される場合はログインをしてください（ユーザー登録がお済みでない方は上のボタンよりお願いします）
+        <p class="restaurant__booking-instruction">当店に予約される場合はログインをしてください（ユーザー登録がお済みでない方は上のボタンよりお願いします）</p>
         @endif
         @if (Auth::check())
-        <form class="booking-form" action="/my_page/booking_indication" method="post">
+        <form class="restaurant__booking-form" action="/my_page/booking_indication" method="post">
         @csrf
-            予約
             <input type="hidden" name="restaurant_id" value="{{ $restaurant->id }}" >
-            <input type="date" name="date" required >
-            <input type="time" name="time" min="11:00" max="20:00" step="900" list="data-list" required >
+            <input class="restaurant__booking-form-date" type="date" name="date">
+            <p></p>
+            <input class="restaurant__booking-form-time" type="time" name="time" min="11:00" max="20:00" step="900" list="data-list">
             <datalist id="data-list">
                 <option value="11:00"></option>
                 <option value="11:15"></option>
@@ -63,22 +67,42 @@
                 <option value="19:45"></option>
                 <option value="20:00"></option>
             </datalist>
-            <select class="form-control" name="number">
+            <p></p>
+            <select class="restaurant__booking-form-number" name="number">
                 <option value="1">1人</option>
                 <option value="2">2人</option>
                 <option value="3">3人</option>
                 <option value="4">4人</option>
                 <option value="5">5人</option>
             </select>
-            <button class="restaurant__booking-submit" type="submit">予約する</button>
+            <p></p>
+            <button class="restaurant__booking-form-submit" type="submit">予約する</button>
         </form>
-        <div>
-            Shop {{ $restaurant['name'] }}
-            Date {{ $date ?? '' }}
-            Time {{ $time ?? '' }}
-            Number {{ $number ?? '' }}人
-            {{ $message ?? '' }}
-        </div>
+
+        @if (count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li class="restaurant__booking-error_messsage">{{$error}}</li>
+            @endforeach
+        </ul>
+        @endif
+        <p></p>
+        <p class="restaurant__booking-message">{{ $message ?? '' }}</p>
+        <p></p>
+        <table class="restaurant__booking-detail">
+            <tr>
+                <td>Shop:</td><td>{{ $restaurant['name'] }}</td>
+            </tr>
+            <tr>
+                <td>Date:</td><td>{{ $date ?? '' }}</td>
+            </tr>
+            <tr>
+                <td>Time:</td><td>{{ $time ?? '' }}</td>
+            </tr>
+            <tr>
+                <td>Number:</td><td>{{ $number ?? '' }}</td>
+            </tr>
+        </table>
         @endif
     </div>
 </div>

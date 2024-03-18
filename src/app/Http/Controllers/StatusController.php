@@ -12,8 +12,7 @@ class StatusController extends Controller
 {
     public function status(){
         $my_bookings = Booking::where('user_id', Auth::id())->with('restaurant')->get();
-        dd($my_bookings);
-        $my_favorites = Favority::where('user_id', Auth::id())->get();
+        $my_favorites = Favority::where('user_id', Auth::id())->with('restaurant')->get();
         return view('status', ['my_bookings'=>$my_bookings, 'my_favorites'=>$my_favorites]);
     }
 }

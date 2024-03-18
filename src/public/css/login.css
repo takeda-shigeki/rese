@@ -49,19 +49,3 @@
     font-weight: bold;
     cursor: pointer;
 }
-
-.register__link {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.register__link-instruction {
-    color: grey;
-    font-size: 13px;
-    margin-bottom: 0px;
-}
-
-.register__button-submit {
-    color: rgb(121, 121, 255);
-    font-weight: bold;
-}

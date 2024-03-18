@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
+use App\Models\Favority;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
@@ -36,13 +38,19 @@ class RestaurantController extends Controller
                 $explanation = "{$request->restaurant_area}にある{$request->genre}店を表示しています";
             }
         }
-        return view('index', ['restaurants' => $restaurants, 'explanation' => $explanation]);
+
+        $my_favorites = Favority::where('user_id', Auth::id())->get();
+
+        return view('index', ['restaurants' => $restaurants, 'explanation' => $explanation, 'my_favorites' => $my_favorites]);
     }
 
     public function keyword_search(Request $request){
         $restaurants = Restaurant::where('name', $request->keyword)->get();
         $input =  $request->keyword;
-        return view('index', ['restaurants' => $restaurants, 'input' => $input]);
+
+        $my_favorites = Favority::where('user_id', Auth::id())->get();
+
+        return view('index', ['restaurants' => $restaurants, 'input' => $input, 'my_favorites' => $my_favorites]);
     }
 
     public function shop_detail(Request $request){

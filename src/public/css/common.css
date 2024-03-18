@@ -1,12 +1,13 @@
 .header {
     height: 60px;
+    width: 1024px;
     background-color: #fff;
 }
 
 .header__inner {
     margin: 0 auto;
     padding: 10px 15px;
-    max-width: 1230px;
+    max-width: 1024px;
 }
 
 .header-utilities {
@@ -24,7 +25,7 @@
 }
 
 .header-utilities nav {
-    width: 40%;
+    width: 50%;
 }
 
 .header-nav {
@@ -50,7 +51,7 @@
 
 main {
     background-color: rgb(240, 247, 255);
-    height: 500px;
+    height: auto;
 }
 
 footer {

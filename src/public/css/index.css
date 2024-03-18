@@ -1,101 +1,68 @@
-.greeting {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    height: 80px;
+.search__form {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin-left: 40%;
+    width: 20%;
+}
+
+.search__form-item {
     color: black;
-    font-size: 16px;
     font-weight: bold;
+    text-decoration: none;
 }
 
-.attendance__content {
-    margin: 0 auto;
-    padding: 0px 15px;
-    max-width: 1230px;
+.search__explanation {
+    text-align: center;
+    font-size: 17px;
 }
 
-.attendance__panel {
-    margin: 0 auto;
+.restaurant__list {
+    margin-left: 100px;
+    margin-right: 100px;
     display: flex;
-    width: 550px;
-    height: 120px;
+    flex-wrap: wrap;
 }
 
-.attendance__button {
-    width: 50%;
-    text-align: center;
+.restaurant__list-each {
+    width: 200px;
+    margin-bottom: 10px;
 }
 
-.attendance__button-submit {
-    padding: 5px;
-    width: 250px;
-    height: 100px;
-    border: none;
-    border-radius: 3px;
-    color: black;
+.restaurant__list-each-image {
+    width: 95%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 2px 2px 4px;
+}
+
+.restaurant__list-each-explanation {
+    width: 95%;
+    height: auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     background-color: white;
+    box-shadow: 2px 2px 4px;
+}
+
+.restaurant__list-each-name {
     font-weight: bold;
-    cursor: pointer;
 }
 
-.attendance__button-submit--off {
-    padding: 5px;
-    width: 250px;
-    height: 100px;
-    border: none;
-    border-radius: 3px;
-    color: gray(255, 255, 255, 0.917);
-    background-color: white;
-    font-weight: lighter;
-}
-
-.break__panel {
-    margin: 0 auto;
+.restaurant__list-each-form {
+    width: 85%;
     display: flex;
-    width: 550px;
-    height: 120px;
+    justify-content: space-around;
 }
 
-.break__button {
-    width: 50%;
-    text-align: center;
-}
-
-.break__button-submit {
-    padding: 5px;
-    width: 250px;
-    height: 100px;
+.restaurant__detail-submit {
+    background-color: blue;
     border: none;
-    border-radius: 3px;
-    color: black;
-    background-color: white;
+    color: white;
     font-weight: bold;
-    cursor: pointer;
 }
 
-.break__button-submit--off {
-    padding: 5px;
-    width: 250px;
-    height: 100px;
-    border: none;
-    border-radius: 3px;
-    color: gray(255, 255, 255, 0.917);
-    background-color: white;
-    font-weight: lighter;
-}
-
-.alert {
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    color: red;
-}
-
-.message {
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    color: black;
+.restaurant__favorite-submit {
+    background-color: transparent;
+    border:none;
 }

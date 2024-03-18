@@ -1,0 +1,72 @@
+.restaurant {
+    display: flex;
+    justify-content: space-between;
+    width: 1024px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.restaurant__detail {
+    width: 90%;
+    padding-right: 5%;
+}
+
+.restaurant__detail-name {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.restaurant__detail-image {
+    width: 100%;
+}
+
+.restaurant__detail-explanation {
+    font-weight: bold;
+}
+
+.restaurant__detail-overview {
+    font-weight: bold;
+}
+
+.restaurant__booking {
+    width: 90%;
+    padding-left: 5%;
+    height: auto;
+    background-color: rgb(107, 107, 248);
+    border-radius: 8px;
+}
+
+.restaurant__booking-title {
+    font-weight: bold;
+    font-size: 22px;
+    color: white;
+}
+
+.restaurant__booking-instruction {
+    color: white;
+}
+
+.restaurant__booking-form-date .restaurant__booking-form-time.restaurant__booking-form-number {
+    border-radius: 2px;
+    border: none;
+    height: 30px;
+    width: 160px;
+}
+
+.restaurant__booking-form-submit {
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.restaurant__booking-error_messsage {
+    color: white;
+    list-style: none;
+}
+
+.restaurant__booking-message {
+    color: white;
+}
+
+.restaurant__booking-detail {
+     color: white;
+ }

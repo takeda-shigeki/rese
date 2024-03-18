@@ -21,7 +21,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/my_page', [AuthController::class, 'my_page']);
     Route::post('/my_page/booking_indication', [BookingController::class, 'booking_indication']);
     Route::post('/my_page', [FavorityController::class, 'favority']);
+    Route::post('/my_page/status', [FavorityController::class, 'favority_delete']);
     Route::get('/my_page/status', [StatusController::class, 'status']);
+    Route::delete('/my_page/status', [BookingController::class, 'booking_delete']);
 });
 
 Route::get('/login', function() {

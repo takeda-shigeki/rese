@@ -1,7 +1,7 @@
 .register__content {
     margin: 0 auto;
     padding: 30px 15px;
-    max-width: 1230px;
+    width: 1024px;
 }
 
 .register-form__heading {
@@ -56,16 +56,17 @@
 
 .login__link {
     margin-top: 40px;
-    text-align: center;
 }
 
-.login__link-instruction {
+.thanks__expression {
     color: grey;
-    font-size: 13px;
+    font-size: 20px;
     margin-bottom: 0px;
+    text-align: center;
 }
 
 .login__button-submit {
     color: rgb(121, 121, 255);
     font-weight: bold;
+    text-align: center
 }

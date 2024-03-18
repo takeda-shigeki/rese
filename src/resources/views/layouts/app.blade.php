@@ -15,25 +15,25 @@
   <header class="header">
     <div class="header__inner">
       <div class="header-utilities">
-        <a class="header__logo" href="/">
+        <a class="header__logo">
           Rese
         </a>
         <nav>
           <ul class="header-nav">
             @if (!Auth::check())
             <li class="header-nav__item">
-              <a class="header-nav__link" href="/">ホーム</a>
+              <a class="header-nav__link" href="/">ホーム<small>(ショップリスト)</small></a>
             </li>
             <li class="header-nav__item">
               <a class="header-nav__link" href="/login">ログイン</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="/login">ユーザー登録</a>
+              <a class="header-nav__link" href="/register">ユーザー登録</a>
             </li>
             @endif
             @if (Auth::check())
             <li class="header-nav__item">
-              <a class="header-nav__link" href="/my_page">ホーム</a>
+              <a class="header-nav__link" href="/my_page">ホーム（ショップリスト）</a>
             </li>
             <li class="header-nav__item">
               <a class="header-nav__link" href="/my_page/status">マイページ</a>

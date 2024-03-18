@@ -28,4 +28,14 @@ class FavorityController extends Controller
 
         return view('index', ['restaurants'=>$restaurants, 'my_favorites'=>$my_favorites, 'input' => '']);
     }
+
+    public function favority_delete(Request $request){
+        $favorite = Restaurant::where('id', $request->favorite)->first();
+
+        if(Favority::where('restaurant_id', $favorite->id)->where('user_id', Auth::id())->exists()) {
+            Favority::where('restaurant_id', $favorite->id)->where('user_id', Auth::id())->delete();
+        }
+
+        return redirect('/my_page/status');
+    }
 }

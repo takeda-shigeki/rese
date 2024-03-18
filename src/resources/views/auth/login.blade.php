@@ -39,9 +39,5 @@
       <button class="form__button-submit" type="submit">ログイン</button>
     </div>
   </form>
-  <div class="register__link">
-    <p class="register__link-instruction">会員登録はこちらから</p>
-    <a class="register__button-submit" href="/register">Registration</a>
-  </div>
 </div>
 @endsection

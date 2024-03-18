@@ -10,4 +10,9 @@ class Favority extends Model
     use HasFactory;
 
     protected $fillable = ['restaurant_id', 'user_id'];
+
+    public function restaurant()
+    {
+        return $this->belongsTo(Restaurant::class);
+    }
 }
