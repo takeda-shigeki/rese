@@ -7,7 +7,7 @@
 }
 
 .restaurant__detail {
-    width: 90%;
+    width: 45%;
     padding-right: 5%;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .restaurant__booking {
-    width: 90%;
+    width: 45%;
     padding-left: 5%;
     height: auto;
     background-color: rgb(107, 107, 248);
@@ -46,9 +46,20 @@
     color: white;
 }
 
-.restaurant__booking-form-date .restaurant__booking-form-time.restaurant__booking-form-number {
+.restaurant__booking-form-date {
     border-radius: 2px;
-    border: none;
+    height: 30px;
+    width: 160px;
+}
+
+.restaurant__booking-form-time {
+    border-radius: 2px;
+    height: 30px;
+    width: 160px;
+}
+
+.restaurant__booking-form-number {
+    border-radius: 2px;
     height: 30px;
     width: 160px;
 }

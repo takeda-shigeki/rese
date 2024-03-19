@@ -1,0 +1,109 @@
+.user {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user__name {
+    font-weight: bold;
+    text-align: center;
+}
+
+.title {
+    display: flex;
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.title__booking {
+    margin-left: 50px;
+    width: 200px;
+}
+
+.title__favorite {
+    margin-left: 20px;
+}
+
+.status {
+    display: flex;
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.status__booking {
+    margin-left: 50px;
+    width: 200px;
+    height: auto;
+}
+
+.status__booking-each {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    font-size: 13px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(107, 107, 248);
+}
+
+.status__booking-each-delete {
+    text-align: right;
+}
+
+.status__booking-each-delete-button {
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.status__favorite {
+    margin-left: 20px;
+    margin-right: 50px;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.status__favorite-each {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.restaurant__favorite-each-image {
+    width: 95%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 2px 2px 4px;
+}
+
+.restaurant__favorite-each-explanation {
+    width: 95%;
+    height: auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 4px;
+}
+
+.restaurant__favorite-each-name {
+    font-weight: bold;
+}
+
+.restaurant__favorite-each-form {
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.restaurant__favorite-each--detail {
+    background-color: blue;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+
+
