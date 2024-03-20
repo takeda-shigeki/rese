@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/my_page/status', [FavorityController::class, 'favority_delete']);
     Route::get('/my_page/status', [StatusController::class, 'status']);
     Route::delete('/my_page/status', [BookingController::class, 'booking_delete']);
+    Route::get('/my_page/booking_change', [BookingController::class, 'booking_change']);
+    Route::post('/my_page/booking_change', [BookingController::class, 'booking_renewal']);
 });
 
 Route::get('/login', function() {

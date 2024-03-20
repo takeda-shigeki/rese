@@ -1,8 +1,8 @@
 .search__form {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 500px;
+    width: 350px;
+    margin: auto;
 }
 
 .search__form-item {

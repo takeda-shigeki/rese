@@ -11,8 +11,9 @@ use App\Models\Restaurant;
 class StatusController extends Controller
 {
     public function status(){
-        $my_bookings = Booking::where('user_id', Auth::id())->with('restaurant')->get();
+        $my_bookings = Booking::where('user_id', Auth::id())->with('restaurant')->get()->sortBy('booking_time');
         $my_favorites = Favority::where('user_id', Auth::id())->with('restaurant')->get();
-        return view('status', ['my_bookings'=>$my_bookings, 'my_favorites'=>$my_favorites]);
+        $current_time = date("Y-m-d H:i:s");
+        return view('status', ['my_bookings'=>$my_bookings, 'my_favorites'=>$my_favorites, 'current_time'=>$current_time]);
     }
 }

@@ -19,6 +19,7 @@
 <div class="status">
     <div class="status__booking">
         @foreach ($my_bookings as $my_booking)
+        @if ($my_booking->booking_time > date("Y-m-d H:i:s", strtotime($current_time . '-1 month')))
         <div class="status__booking-each">
             <table>
                 <tr>
@@ -34,16 +35,37 @@
                     <td>Number:</td><td>{{ $my_booking->number }}人</td>
                 </tr>
             </table>
-            <form action="/my_page/status" method="post">
+            @if ($my_booking->booking_time > $current_time)
+            <div class=status__booking-each-change.delete>
+                <form action="/my_page/booking_change" method="get">
+                @csrf
+                    <div class="status__booking-each-change">
+                        <input type="hidden" name="my_booking_id" value="{{ $my_booking['id'] }}">
+                        <button class="status__booking-each-change-button" type="submit">予約変更</button>
+                    </div>
+                </form>
+                <form action="/my_page/status" method="post">
                 @method('DELETE')
                 @csrf
-                <div class="status__booking-each-delete">
+                    <div class="status__booking-each-delete">
+                        <input type="hidden" name="my_booking_id" value="{{ $my_booking['id'] }}">
+                        <button class="status__booking-each-delete-button" type="submit">予約取り消し</button>
+                        {{ $message ?? '' }}
+                    </div>
+                </form>
+            </div>
+            @else
+            <p>ご利用ありがとうございました。ご利用後1ヶ月以内に評価をいただけましたら幸いです。</p>
+            <form action="/my_page/rating" method="get">
+                @csrf
+                <div class="status__booking-each-rating">
                     <input type="hidden" name="my_booking_id" value="{{ $my_booking['id'] }}">
-                    <button class="status__booking-each-delete-button" type="submit">予約取り消し</button>
-                    {{ $message ?? '' }}
+                    <button class="status__booking-each-rating-button" type="submit">評価する</button>
                 </div>
             </form>
+            @endif
         </div>
+        @endif
         @endforeach
     </div>
 

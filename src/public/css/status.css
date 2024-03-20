@@ -34,7 +34,7 @@
 
 .status__booking {
     margin-left: 50px;
-    width: 200px;
+    width: 350px;
     height: auto;
 }
 
@@ -48,11 +48,15 @@
     background-color: rgb(107, 107, 248);
 }
 
-.status__booking-each-delete {
-    text-align: right;
+.status__booking-each-change.delete {
+    display: flex;
 }
 
-.status__booking-each-delete-button {
+.status__booking-each-change .status__booking-each-delete{
+    text-align: center;
+}
+
+.status__booking-each-change-button .status__booking-each-delete-button {
     border-radius: 4px;
     font-weight: bold;
 }
