@@ -1,0 +1,62 @@
+.restaurant {
+    display: flex;
+    justify-content: space-between;
+    width: 1024px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.restaurant__detail {
+    width: 45%;
+    padding-right: 5%;
+}
+
+.restaurant__detail-name {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.restaurant__detail-image {
+    width: 100%;
+}
+
+.restaurant__detail-explanation {
+    font-weight: bold;
+}
+
+.restaurant__detail-overview {
+    font-weight: bold;
+}
+
+.rating {
+    width: 45%;
+    padding-left: 5%;
+    height: auto;
+    background-color: rgb(107, 107, 248);
+    border-radius: 8px;
+}
+
+.rating__title {
+    font-weight: bold;
+    font-size: 22px;
+    color: white;
+}
+
+.rating__form-label {
+    color:white;
+}
+
+.rating__form-instruction {
+    color: white;
+}
+
+.rating__form-submit {
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.rating__error_messsage {
+    color: white;
+    list-style: none;
+}
+

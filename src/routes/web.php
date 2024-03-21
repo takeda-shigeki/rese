@@ -6,6 +6,7 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FavorityController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\RatingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/my_page/status', [BookingController::class, 'booking_delete']);
     Route::get('/my_page/booking_change', [BookingController::class, 'booking_change']);
     Route::post('/my_page/booking_change', [BookingController::class, 'booking_renewal']);
+    Route::get('/my_page/rating', [RatingController::class, 'rating']);
+    Route::post('/my_page/rating', [RatingController::class, 'rating_store']);
 });
 
 Route::get('/login', function() {

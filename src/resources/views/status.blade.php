@@ -55,7 +55,7 @@
                 </form>
             </div>
             @else
-            <p>ご利用ありがとうございました。ご利用後1ヶ月以内に評価をいただけましたら幸いです。</p>
+            <p>ご来店ありがとうございました。ご来店後1ヶ月以内に評価をいただけましたら幸いです。</p>
             <form action="/my_page/rating" method="get">
                 @csrf
                 <div class="status__booking-each-rating">
