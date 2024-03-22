@@ -16,5 +16,10 @@ class AuthController extends Controller
         return view('index', ['restaurants'=>$restaurants, 'input' => '', 'my_favorites'=>$my_favorites]);
     }
 
+    public function host()
+    {
+        return view('host');
+    }
+
     
 }

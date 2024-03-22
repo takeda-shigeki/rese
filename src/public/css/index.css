@@ -23,6 +23,15 @@
     flex-wrap: wrap;
 }
 
+@media screen and (max-width: 768px) {
+    .restaurant__list {
+        margin-left: 0px;
+        margin-right: 0px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 .restaurant__list-each {
     width: 200px;
     margin-bottom: 10px;

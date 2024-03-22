@@ -55,6 +55,10 @@
     font-weight: bold;
 }
 
+.rating__message {
+    color: white;
+}
+
 .rating__error_messsage {
     color: white;
     list-style: none;

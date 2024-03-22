@@ -40,6 +40,7 @@
             </p>
             <button class="rating__form-submit" type="submit">送信する</button>
         </form>
+        <p class="rating__message">{{ $message ?? '' }}</p>
 
         @if (count($errors) > 0)
         <ul>

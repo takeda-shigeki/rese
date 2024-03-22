@@ -32,6 +32,6 @@ class RatingController extends Controller
         ];
         Review::create($record);
 
-        return view('rating', ['restaurant' => $restaurant, 'user_id' => $user_id]);
+        return view('rating', ['restaurant' => $restaurant, 'user_id' => $user_id, 'message' => 'ありがとうございました']);
     }
 }

@@ -20,6 +20,7 @@ use App\Http\Controllers\RatingController;
 */
 Route::middleware('auth')->group(function () {
     Route::get('/my_page', [AuthController::class, 'my_page']);
+    Route::get('/host', [AuthController::class, 'host']);
     Route::post('/my_page/booking_indication', [BookingController::class, 'booking_indication']);
     Route::post('/my_page', [FavorityController::class, 'favority']);
     Route::post('/my_page/status', [FavorityController::class, 'favority_delete']);

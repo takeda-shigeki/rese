@@ -10,10 +10,15 @@ use App\Actions\Fortify\UpdateUserProfileInformation;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Route; //追記
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\RegisterResponse as RegisterResponseContract; //追記
+use Laravel\Fortify\Contracts\LoginResponse as LoginResponseContract; //追記
+use Laravel\Fortify\Contracts\TwoFactorLoginResponse as TwoFactorLoginResponseContract; //追記
 use App\Http\Responses\RegisterResponse; //追記
+use App\Http\Responses\LoginResponse; //追記
+use App\Http\Responses\TwoFactorLoginResponse; //追記
 use App\Http\Controllers\RegisterController; //追記
 use Laravel\Fortify\Http\Controllers\RegisteredUserController; //追記
 
@@ -27,12 +32,20 @@ class FortifyServiceProvider extends ServiceProvider
         $this->app->singleton(
             RegisteredUserController::class,
             RegisterController::class
-        ); 
+        );
+        $this->registerResponseBindings(); //追記
     }
 
     /**
      * Bootstrap any application services.
      */
+    //以下追記
+    protected function registerResponseBindings()
+    {
+        $this->app->singleton(LoginResponseContract::class, LoginResponse::class);
+        $this->app->singleton(TwoFactorLoginResponseContract::class, TwoFactorLoginResponse::class);
+    }
+
     public function boot(): void
     {
         Fortify::createUsersUsing(CreateNewUser::class);

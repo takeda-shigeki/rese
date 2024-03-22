@@ -10,6 +10,13 @@
     max-width: 1024px;
 }
 
+@media screen and (max-width: 768px) {
+    .header__inner {
+        margin: 0 auto;
+        padding: 10px 15px;
+    }
+}
+
 .header-utilities {
     display: flex;
     justify-content: space-between;
@@ -26,6 +33,12 @@
 
 .header-utilities nav {
     width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .header-utilities nav {
+        width: 80%;
+    }
 }
 
 .header-nav {
@@ -55,4 +68,12 @@ main {
     width: auto;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        background-color: rgb(240, 247, 255);
+        height: auto;
+        width: auto;
+    }
 }
