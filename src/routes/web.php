@@ -7,6 +7,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FavorityController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\HostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,15 +22,17 @@ use App\Http\Controllers\RatingController;
 Route::middleware('auth')->group(function () {
     Route::get('/my_page', [AuthController::class, 'my_page']);
     Route::get('/host', [AuthController::class, 'host']);
+    Route::get('/admin', [AuthController::class, 'admin']);
     Route::post('/my_page/booking_indication', [BookingController::class, 'booking_indication']);
-    Route::post('/my_page', [FavorityController::class, 'favority']);
-    Route::post('/my_page/status', [FavorityController::class, 'favority_delete']);
-    Route::get('/my_page/status', [StatusController::class, 'status']);
     Route::delete('/my_page/status', [BookingController::class, 'booking_delete']);
     Route::get('/my_page/booking_change', [BookingController::class, 'booking_change']);
     Route::post('/my_page/booking_change', [BookingController::class, 'booking_renewal']);
+    Route::post('/my_page', [FavorityController::class, 'favority']);
+    Route::post('/my_page/status', [FavorityController::class, 'favority_delete']);
+    Route::get('/my_page/status', [StatusController::class, 'status']);
     Route::get('/my_page/rating', [RatingController::class, 'rating']);
     Route::post('/my_page/rating', [RatingController::class, 'rating_store']);
+    Route::post('/host', [HostController::class, 'overview_update']);
 });
 
 Route::get('/login', function() {

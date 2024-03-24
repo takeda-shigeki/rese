@@ -32,12 +32,14 @@
             </li>
             @endif
             @if (Auth::check())
+              @if (Auth::user()->role!='host')
             <li class="header-nav__item">
               <a class="header-nav__link" href="/my_page">ホーム（ショップリスト）</a>
             </li>
             <li class="header-nav__item">
               <a class="header-nav__link" href="/my_page/status">マイページ</a>
             </li>
+              @endif
             <li class="header-nav__item">
               <form class="form" action="/logout" method="post">
                 @csrf

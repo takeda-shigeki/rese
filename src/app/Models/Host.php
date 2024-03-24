@@ -9,10 +9,15 @@ class Host extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'restaurant_id'];
+    protected $fillable = ['user_id'];
 
     public function restaurant()
     {
-        return $this->belongsToMany(Restaurant::class)->withTimestamps();
+        return $this->belongsToMany(Restaurant::class);
+    }
+
+        public function user()
+    {
+        return $this->hasOne(User::class);
     }
 }
