@@ -16,8 +16,4 @@ class Host extends Model
         return $this->belongsToMany(Restaurant::class);
     }
 
-        public function user()
-    {
-        return $this->hasOne(User::class);
-    }
 }

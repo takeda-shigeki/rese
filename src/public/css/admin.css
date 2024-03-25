@@ -4,6 +4,7 @@
 }
 
 .user__name {
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
@@ -17,7 +18,7 @@
 }
 
 .admin__host {
-    width: 45%;
+    width: 65%;
     padding-left: 5%;
     height: auto;
     background-color: rgb(107, 107, 248);
@@ -26,46 +27,23 @@
 
 .admin__host-title {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 18px;
     color: white;
 }
 
-.admin__host-instruction {
+.admin__host-detail {
+    width:100%;
     color: white;
+    font-size: 15px;
 }
 
-.admin__host-form-date {
-    border-radius: 2px;
-    height: 30px;
-    width: 160px;
-}
-
-.admin__host-form-time {
-    border-radius: 2px;
-    height: 30px;
-    width: 160px;
-}
-
-.admin__host-form-number {
-    border-radius: 2px;
-    height: 30px;
-    width: 160px;
-}
 
 .admin__host-form-submit {
     border-radius: 4px;
     font-weight: bold;
 }
 
-.admin__host-error_messsage {
-    color: white;
-    list-style: none;
-}
 
 .admin__host-message {
-    color: white;
-}
-
-.admin__host-detail {
     color: white;
 }

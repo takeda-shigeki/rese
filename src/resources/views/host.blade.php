@@ -20,6 +20,26 @@
         <p class="restaurant__detail-explanation">＃{{ $restaurant['prefecture'] }}　＃{{ $restaurant['genre'] }}</p>
         <p class="restaurant__detail-overview">{{ $restaurant['overview'] }}</p>
         <p></p>
+        @if ($errors->any())
+        <div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        <form method="post" action="/host/image_upload" enctype="multipart/form-data">
+        @csrf
+            画像の登録は以下より行ってください
+            <div>
+                <div>
+                    <input type="file" name="upload_image">
+                </div>
+                <button type="submit" >送信</button>
+            </div>
+        </form>
+        <p></p>
         <form action="/host" method="post">
         @csrf
             店舗紹介文の更新は以下より行ってください（最大125文字）

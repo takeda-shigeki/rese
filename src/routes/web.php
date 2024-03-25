@@ -33,6 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/my_page/rating', [RatingController::class, 'rating']);
     Route::post('/my_page/rating', [RatingController::class, 'rating_store']);
     Route::post('/host', [HostController::class, 'overview_update']);
+    Route::post('/admin/register', [HostController::class, 'host_registration']);
+    Route::delete('/admin/delete', [HostController::class, 'delete']);
+    Route::post('/host/image_upload', [HostController::class, 'image_upload']);
 });
 
 Route::get('/login', function() {
