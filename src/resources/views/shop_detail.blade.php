@@ -9,7 +9,7 @@
     <div class="restaurant__detail">
         <h class="restaurant__detail-name">{{ $restaurant['name'] }}</h><br>
         <p></p>
-        <img class="restaurant__detail-image" src="/images/{{ $restaurant->id }}.jpg">
+        <img class="restaurant__detail-image" src="/storage/images/{{ $restaurant->id }}.jpg">
         <p class="restaurant__detail-explanation">＃{{ $restaurant['prefecture'] }}　＃{{ $restaurant['genre'] }}</p>
         <p class="restaurant__detail-overview">{{ $restaurant['overview'] }}</p>
     </div>

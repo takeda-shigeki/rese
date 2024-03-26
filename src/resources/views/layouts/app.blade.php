@@ -36,9 +36,11 @@
             <li class="header-nav__item">
               <a class="header-nav__link" href="/my_page">ホーム（ショップリスト）</a>
             </li>
+                @if (Auth::user()->role!='admin')
             <li class="header-nav__item">
               <a class="header-nav__link" href="/my_page/status">マイページ</a>
             </li>
+                @endif
               @endif
             <li class="header-nav__item">
               <form class="form" action="/logout" method="post">
@@ -46,6 +48,11 @@
                 <button class="header-nav__button">ログアウト</button>
               </form>
             </li>
+              @if (Auth::user()->role=='admin')
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="/admin/mail">お知らせメール作成</a>
+            </li>
+              @endif
             @endif
           </ul>
         </nav>

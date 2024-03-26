@@ -64,12 +64,13 @@ class HostController extends Controller
 
     public function image_upload(Request $request) {
         $request->validate([
-            'upload_image' => 'required|max:1024'
+            'image' => 'required|max:1024|mimes:jpg,svg'
         ]);
 
-        $request->upload_image->store('upimages');
+        $extension = $request->image->getClientOriginalExtension();//拡張子の取得
+        $image_name = $request->restaurant_id. "." . $extension;
+        $request->image->storeAs('images', $image_name, 'public');
 
-        echo "upload success";
-        exit;
+        return redirect('/host');
     }
 }

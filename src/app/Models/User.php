@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail //末尾の２ワード追加
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -42,3 +42,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+

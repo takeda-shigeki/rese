@@ -44,7 +44,7 @@
 <div class="restaurant__list">
   @foreach ($restaurants as $restaurant)
   <div class="restaurant__list-each">
-    <img class="restaurant__list-each-image" src="/images/{{ $restaurant->id }}.jpg">
+    <img class="restaurant__list-each-image" src="/storage/images/{{ $restaurant->id }}.jpg">
     <div class="restaurant__list-each-explanation">
       <h class="restaurant__list-each-name">{{ $restaurant['name'] }}</h><br>
       <small>＃{{ $restaurant['prefecture'] }}　＃{{ $restaurant['genre'] }}</small>

@@ -34,16 +34,11 @@
 .admin__host-detail {
     width:100%;
     color: white;
+    border: 1px solid white;
+    border-collapse: collapse;
     font-size: 15px;
 }
 
-
-.admin__host-form-submit {
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-
-.admin__host-message {
-    color: white;
+.admin__register-form {
+    margin-top: 0;
 }

@@ -17,7 +17,7 @@
         <p></p>
         <table class="admin__host-detail">
             <tr>
-                <hd>host_id</hd><hd>氏名</hd><hd>管轄店舗名</hd>
+                <th>host_id</th><th>氏名</th><th>管轄店舗名</th>
             </tr>
             @foreach ($hosts as $host)
             <tr>
@@ -27,10 +27,9 @@
         </table>
     </div>
 
-    <div>
+    <div class="admin__register">
         <h3>店舗代表者登録</h3>
-        <p></p>
-        <form action="/admin/register" method="post">
+        <form class="admin__register-form" action="/admin/register" method="post">
         @csrf
             <table>
                 <tr>
@@ -48,10 +47,10 @@
             </table>
             <button type="submit">送信する</button>
         </form>
-        <p></p>
+        <p></p><br>
         <p></p>
         <h3>店舗代表者登録抹消</h3>
-        <form action="/admin/delete" method="post">
+        <form class="admin__register-form" action="/admin/delete" method="post">
         @method('DELETE')
         @csrf
             <table>
@@ -61,10 +60,10 @@
             </table>
             <button type="submit">登録抹消</button>
         </form>
-        <p></p>
+        <p></p><br>
         <p></p>
         <h3>店舗登録抹消</h3>
-        <form action="/admin/delete" method="post">
+        <form class="admin__register-form" action="/admin/delete" method="post">
         @method('DELETE')
         @csrf
             <table>

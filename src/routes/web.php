@@ -8,6 +8,7 @@ use App\Http\Controllers\FavorityController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\HostController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/register', [HostController::class, 'host_registration']);
     Route::delete('/admin/delete', [HostController::class, 'delete']);
     Route::post('/host/image_upload', [HostController::class, 'image_upload']);
+    Route::get('/admin/mail', [MailController::class, 'mail']);
 });
 
 Route::get('/login', function() {

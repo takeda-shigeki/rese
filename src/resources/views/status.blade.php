@@ -72,7 +72,7 @@
     <div class="status__favorite">
         @foreach ($my_favorites as $my_favorite)
         <div class="status__favorite-each">
-            <img class="restaurant__favorite-each-image" src="/images/{{ $my_favorite->restaurant_id }}.jpg" width=20%>
+            <img class="restaurant__favorite-each-image" src="/storage/images/{{ $my_favorite->restaurant_id }}.jpg" width=20%>
             <div class="restaurant__favorite-each-explanation">
                 <br>
                 <h class="restaurant__favorite-each-name">&emsp;{{$my_favorite->restaurant->name }}</h><br>
