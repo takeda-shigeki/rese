@@ -10,12 +10,19 @@
 
 <body>
     <main  style="text-align:center">
-        <form action="/host" method="post">
+        <form action="/admin" method="post">
         @csrf
-            <h2>お知らせメール本文</h2>
-            <textarea cols="35" rows="15" name="message"></textarea><br>
+            <h2>お知らせメール作成</h2>
+            <a>件名</a><br>
+            <input type="text" name="subject"></input><br>
+            <p></p>
+            <a>本文</a><br>
+            <textarea cols="35" rows="15" name="text"></textarea><br>
+            <p></p>
             <button type="submit">送信</button>
         </form>
+        <p></p>
+        <a href="/admin">戻る</a>
     </main>
 </body>
 

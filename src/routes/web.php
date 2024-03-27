@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/delete', [HostController::class, 'delete']);
     Route::post('/host/image_upload', [HostController::class, 'image_upload']);
     Route::get('/admin/mail', [MailController::class, 'mail']);
+    Route::post('/admin', [MailController::class, 'send_mail']);
 });
 
 Route::get('/login', function() {

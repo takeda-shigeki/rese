@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Host;
+use App\Models\Restaurant;
 use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
@@ -14,16 +17,24 @@ class MailController extends Controller
 
     public function send_mail(Request $request)
     {
+        $subject = $request->subject;
+        $text = $request->text;
+
+        //テスト用
         $name = 'テスト ユーザー';
         $email = 'test@example.com';
+        Mail::send('emails.test', ['name' => $name, 'text' => $text], function($message)  use ($email, $subject) {$message->to($email)->subject($subject);});
 
-        Mail::send('test.mail', [
-            'name' => $name,
-        ], function ($message) use ($email) {
-            $message->to($email)
-                ->subject('テストタイトル');
-        });
-
-        return view('welcome');
+        //本番用
+        //$users = User::all();
+        //foreach($users as $user) {
+        //    $name = $user->name;
+        //    $email = $user->email;
+        //    Mail::send('emails.test', ['name' => $name, 'text' => $text], function($message)  use ($email, $subject) {$message->to($email)->subject($subject);});
+        //}
+        
+        $hosts = Host::with('restaurant')->get();
+        
+        return view('admin', ['hosts' => $hosts]);
     }
 }
