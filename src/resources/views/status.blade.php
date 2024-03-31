@@ -53,6 +53,10 @@
                         {{ $message ?? '' }}
                     </div>
                 </form>
+                <form action="/payment/create" method="get">
+                @csrf
+                    <button class="status__booking-each-payment-button" type="submit">事前決済</button>
+                </form>
             </div>
             @else
             <p>ご来店ありがとうございました。ご来店後1ヶ月以内に評価をいただけましたら幸いです。</p>

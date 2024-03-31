@@ -42,7 +42,7 @@ class Batch extends Command
     public function handle()
     {
         // バッチ処理の誤差
-        $from = date('Y-m-d H:i:s', strtotime('+2 hours'));
+        $from = date('Y-m-d H:i:s', strtotime('+1 hours'));
         $to = date('Y-m-d H:i:s', strtotime('+13 hours'));
 
         // $fromから$toの間のタスクをデータベースから取り出す。
@@ -56,6 +56,7 @@ class Batch extends Command
             $number = $booking->number;
             $email = User::where('id', $booking->user_id)->first()->email;
             $subject = "本日の御予約";
+
             Mail::send('emails.reminder', ['name' => $name, 'restaurant_name' => $restaurant_name, 'booking_time' => $booking_time, 'number' => $number], function($message)  use ($email, $subject) {$message->to($email)->subject($subject);});
         }
     }

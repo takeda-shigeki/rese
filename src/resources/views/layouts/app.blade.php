@@ -14,55 +14,53 @@
 <body>
   <header class="header">
     <div class="header__inner">
-      <div class="header-utilities">
-        <a class="header__logo">
-          Rese
-        </a>
-        <nav>
-          <ul class="header-nav">
-            @if (!Auth::check())
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="/">ホーム<small>(ショップリスト)</small></a>
-            </li>
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="/login">ログイン</a>
-            </li>
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="/register">ユーザー登録</a>
-            </li>
-            @endif
-            @if (Auth::check())
-              @if (Auth::user()->role!='host')
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="/my_page">ホーム（ショップリスト）</a>
-            </li>
-                @if (Auth::user()->role!='admin')
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="/my_page/status">マイページ</a>
-            </li>
-                @endif
-              @endif
-            <li class="header-nav__item">
-              <form class="form" action="/logout" method="post">
-                @csrf
-                <button class="header-nav__button">ログアウト</button>
-              </form>
-            </li>
-              @if (Auth::user()->role=='admin')
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="/admin/mail">お知らせメール作成</a>
-            </li>
+      <a class="header__logo">
+        Rese
+      </a>
+      <div class="header__utilities">
+        <ul class="header__nav">
+          @if (!Auth::check())
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="/">ホーム<small>(ショプリスト)</small></a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="/login">ログイン</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="/register">ユーザー登録</a>
+          </li>
+          @endif
+          @if (Auth::check())
+            @if (Auth::user()->role!='host')
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="/my_page">ホーム（ショップリスト）</a>
+          </li>
+              @if (Auth::user()->role!='admin')
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="/my_page/status">マイページ</a>
+          </li>
               @endif
             @endif
-          </ul>
-        </nav>
+          <li class="header__nav-item">
+            <form class="form" action="/logout" method="post">
+              @csrf
+              <button class="header__nav-button">ログアウト</button>
+            </form>
+          </li>
+            @if (Auth::user()->role=='admin')
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="/admin/mail">お知らせメール作成</a>
+          </li>
+            @endif
+          @endif
+        </ul>
       </div>
-    </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    @yield('content')
-  </main>
+<main>
+  @yield('content')
+</main>
 
 </body>
 

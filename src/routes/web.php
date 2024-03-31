@@ -9,6 +9,7 @@ use App\Http\Controllers\StatusController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\HostController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,5 +54,10 @@ Route::get('/', [RestaurantController::class, 'index']);
 Route::get('/search', [RestaurantController::class, 'search']);
 Route::post('/search', [RestaurantController::class, 'keyword_search']);
 Route::get('/shop_detail', [RestaurantController::class, 'shop_detail']);
+
+Route::prefix('payment')->name('payment.')->group(function () {
+    Route::get('/create', [PaymentController::class, 'create'])->name('create');
+    Route::post('/store', [PaymentController::class, 'store'])->name('store');
+});
 
 

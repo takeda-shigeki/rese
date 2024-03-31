@@ -1,0 +1,41 @@
+.container {
+    width: auto;
+}
+
+.content {
+    width: 350px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+.content__header {
+    height: 40px;
+    line-height: 40px;
+    font-weight: bolder;
+    background-color: rgb(224, 224, 224);
+}
+
+.content__input {
+    margin: 20px 20px;
+}
+
+.content__input-box {
+    height: 20px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 2px;
+}
+
+.content__input-button {
+    margin-top: 10px;
+    height: 35px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    border: 0px;
+    border-radius: 2px;
+    background-color: rgb(137, 137, 252);
+}

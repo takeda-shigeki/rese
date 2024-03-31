@@ -24,6 +24,7 @@ class BookingController extends Controller
                 'booking_time' => $booking_time,
                 'number' => $number,
             ];
+
             Booking::create($record);
 
             $message = "御予約ありがとうございます。以下のとおり予約しました。";
