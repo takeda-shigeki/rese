@@ -18,7 +18,7 @@
 
 .title__booking {
     margin-left: 50px;
-    width: 200px;
+    width: 300px;
 }
 
 .title__favorite {
@@ -34,7 +34,7 @@
 
 .status__booking {
     margin-left: 50px;
-    width: 350px;
+    width: 300px;
     height: auto;
 }
 
@@ -52,7 +52,7 @@
     display: flex;
 }
 
-.status__booking-each-change .status__booking-each-delete{
+.status__booking-each-change .status__booking-each-delete {
     text-align: center;
 }
 
@@ -109,5 +109,3 @@
     color: white;
     font-weight: bold;
 }
-
-

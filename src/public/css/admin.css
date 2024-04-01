@@ -33,10 +33,15 @@
 
 .admin__host-detail {
     width:100%;
+    margin-right: 10px;
     color: white;
     border: 1px solid white;
     border-collapse: collapse;
     font-size: 15px;
+}
+
+.admin__host-detail th td {
+    border: solid 1pxwhite;
 }
 
 .admin__register-form {
