@@ -16,9 +16,25 @@
     margin-left: auto;
 }
 
+@media screen and (max-width: 768px) {
+    .restaurant {
+        width: auto;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
 .restaurant__detail {
     width: 30%;
     padding-right: 5%;
+}
+
+@media screen and (max-width: 768px) {
+    .restaurant__detail {
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
 }
 
 .restaurant__detail-name {
@@ -45,6 +61,17 @@
     background-color: rgb(107, 107, 248);
     border-radius: 8px;
 }
+
+@media screen and (max-width: 768px) {
+    .restaurant__booking {
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
+        background-color: rgb(107, 107, 248);
+        border-radius: 8px;
+    }
+}
+
 
 .restaurant__booking-title {
     font-weight: bold;

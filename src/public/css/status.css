@@ -16,9 +16,27 @@
     font-weight: bold;
 }
 
+@media screen and (max-width: 768px) {
+    .title {
+        display: flex;
+        width: auto;
+        margin-right: 0px;
+        margin-left: 0px;
+        font-weight: bold;
+    }
+}
+
 .title__booking {
     margin-left: 50px;
     width: 300px;
+}
+
+@media screen and (max-width: 768px) {
+    .title__booking {
+        margin-left: 0px;
+        width: 50%;
+        background-color: brown;
+    }
 }
 
 .title__favorite {
@@ -32,10 +50,26 @@
     margin-left: auto;
 }
 
+@media screen and (max-width: 768px) {
+    .status {
+        display: flex;
+        width: auto;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
 .status__booking {
     margin-left: 50px;
     width: 300px;
     height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .status__booking {
+        margin-left: 0px;
+        width: 50%;
+    }
 }
 
 .status__booking-each {

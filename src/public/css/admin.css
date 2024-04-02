@@ -40,10 +40,6 @@
     font-size: 15px;
 }
 
-.admin__host-detail th td {
-    border: solid 1pxwhite;
-}
-
 .admin__register-form {
     margin-top: 0;
 }

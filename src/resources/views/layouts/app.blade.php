@@ -21,7 +21,7 @@
         <ul class="header__nav">
           @if (!Auth::check())
           <li class="header__nav-item">
-            <a class="header__nav-link" href="/">ホーム<small>(ショプリスト)</small></a>
+            <a class="header__nav-link" href="/">ホーム</a>
           </li>
           <li class="header__nav-item">
             <a class="header__nav-link" href="/login">ログイン</a>

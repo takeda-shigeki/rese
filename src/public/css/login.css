@@ -46,6 +46,16 @@
     appearance: none;
 }
 
+@media screen and (max-width: 768px) {
+    .form__group-content-input input {
+        padding: 0px;
+        width: 100%;
+        height: 30px;
+        border: 1px solid grey;
+        border-radius: 2px;
+        appearance: none;
+}
+
 .form__button-submit {
     padding: 10px;
     width: 100%;
