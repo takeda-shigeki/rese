@@ -12,9 +12,17 @@
 .admin {
     display: flex;
     justify-content: space-between;
-    width: 1024px;
+    width: auto;
     margin-right: auto;
     margin-left: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .admin {
+        width: auto;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
 }
 
 .admin__host {
@@ -23,6 +31,15 @@
     height: auto;
     background-color: rgb(107, 107, 248);
     border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    .admin__host {
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
+        font-size: 11px;
+    }
 }
 
 .admin__host-title {
@@ -38,6 +55,14 @@
     border: 1px solid white;
     border-collapse: collapse;
     font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .admin__register {
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
 }
 
 .admin__register-form {
