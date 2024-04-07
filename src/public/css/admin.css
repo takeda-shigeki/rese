@@ -19,6 +19,7 @@
 
 @media screen and (max-width: 768px) {
     .admin {
+        display: block;
         width: auto;
         margin-right: 0px;
         margin-left: 0px;
@@ -38,7 +39,6 @@
         width: 100%;
         margin-right: 0px;
         margin-left: 0px;
-        font-size: 11px;
     }
 }
 
@@ -55,6 +55,18 @@
     border: 1px solid white;
     border-collapse: collapse;
     font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .admin__host-detail {
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
+        color: white;
+        border: 1px solid white;
+        border-collapse: collapse;
+        font-size: 10px;
+    }
 }
 
 @media screen and (max-width: 768px) {

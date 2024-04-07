@@ -33,7 +33,7 @@
           @if (Auth::check())
             @if (Auth::user()->role!='host')
           <li class="header__nav-item">
-            <a class="header__nav-link" href="/my_page">ホーム（ショップリスト）</a>
+            <a class="header__nav-link" href="/my_page">ホーム</a>
           </li>
               @if (Auth::user()->role!='admin')
           <li class="header__nav-item">

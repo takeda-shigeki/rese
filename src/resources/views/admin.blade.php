@@ -15,7 +15,7 @@
     <div class="admin__host">
         <h3 class="admin__host-title">店舗代表者情報</h3>
         <p></p>
-        <table class="admin__host-detail">
+        <table class="admin__host-detail" rules="all">
             <tr>
                 <th>host_id</th><th>氏名</th><th>管轄店舗名</th>
             </tr>
