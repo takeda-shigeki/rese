@@ -49,4 +49,12 @@ MySQL 8.0.26<BR>
 ## ER図
 ![rese](https://github.com/takeda-shigeki/rese/assets/132808377/c44cbc21-b3ed-4d68-b48e-6e0618b7e6c4)
 
+## 備考
+・管理者用ページへの入り方<br>
+UsersTableSeeder.phpにて、'role'が'admin'となっているユーザーの'email'と'password'にてログインする。<br>
+・店舗代表者用ページへの入り方<br>
+UsersTableSeeder.phpにて、'role'が'host'となっているユーザーの'email'と'password'にてログインする。<br>
+・利用者用ページへの入り方<br>
+UsersTableSeeder.phpにて、'role'が指定されていないユーザーの'email'と'password'にてログインする。あるいは、ご自身で新規ユーザー登録する。<br>
+
 
